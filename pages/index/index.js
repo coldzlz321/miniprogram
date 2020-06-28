@@ -17,7 +17,20 @@ Page({
     })
   },
   bindToastTap:function(){
-    
+    wx.showModal({
+      title:"通知",
+      content:"你确定要取消么",
+      cancelColor: 'cancelColor',
+      showCancel:true,
+      cancelText:"暂不登录",
+      confirmText:"前往登录",
+      success:function(){
+       wx.navigateTo({
+         url: '../addressAdd/addressAdd.js',
+       })
+      }
+      
+    })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -46,10 +59,7 @@ Page({
         }
       })
     }
-    setInterval(() => {
-      console.log(1)
-      this.setData({motto:formatTime(new Date())})
-    },1000)
+   
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -58,5 +68,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onPullDownRefresh:function(){
+
   }
 })
