@@ -1,13 +1,26 @@
-// pages/addressAdd/addressAdd.js.js
+// pages/start/start.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    current:0,
+    banners:["../../images/nav/cart-off.png","../../images/nav/home-off.png","../../images/nav/ic_catefory_normal.png"]
   },
-
+  gotoIndex:function(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  }
+  ,
+  changeSwiper:function(e){
+    console.log(e)
+    let {current} = e.detail;
+    this.setData({
+      current
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

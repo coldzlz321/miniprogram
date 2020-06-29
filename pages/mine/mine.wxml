@@ -1,0 +1,126 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image catchtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+ <view class="num-show">
+  <view class="item right">
+    <text>{{balance}}</text>
+    <text>余额</text>
+  </view>
+  <view class="item right">
+    <text>{{freeze}}</text>
+    <text>冻结</text>
+  </view>
+  <view class="item right">
+    <text>{{score}}</text>
+    <text>积分</text>
+  </view>
+  <navigator>
+  <view class="item ">
+    <text>{{growth}}</text>
+    <text>成长值</text>
+  </view>
+  </navigator>
+ </view>
+ <view>
+  <view class="section-title">
+  <text>首页标题</text>
+  <text class="fr">右边标题</text>
+  </view>
+   <view class="num-show">
+  <view class="item right">
+    <text>{{balance}}</text>
+    <text>余额</text>
+  </view>
+  <view class="item right">
+    <text>{{freeze}}</text>
+    <text>冻结</text>
+  </view>
+  <view class="item right">
+    <text>{{score}}</text>
+    <text>积分</text>
+  </view>
+  <navigator>
+  <view class="item ">
+    <text>{{growth}}</text>
+    <text>成长值</text>
+  </view>
+  </navigator>
+ </view>
+ </view>
+ <scroll-view bindscroll="scrollTab" scroll-with-animation="true" scroll-x="true" enable-flex="true" class="scroll-container">
+  <view class="scroll-tab">
+    <text>首页</text>
+  </view>
+   <view class="scroll-tab">
+    <text>电脑</text>
+  </view>
+  <view class="scroll-tab">
+    <text>家具</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+   <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+   <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+  <view class="scroll-tab">
+    <text>美妆</text>
+  </view>
+  <view class="scroll-tab">
+    <text>食品</text>
+  </view>
+ </scroll-view>
+ <view class="progress-container">
+  <view class="progress-bg">
+    <view style="left:{{thumbLeft}}px" class="progress-thumb"></view>
+  </view>
+ </view>
+</view>

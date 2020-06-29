@@ -6,9 +6,15 @@ import {formatTime} from "../../utils/util"
 Page({
   data: {
     motto: formatTime(new Date()),
+    balance:0.00,
+    freeze:0.00,
+    thumbLeft:0,
+    score:0,
+    growth:0,
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    windowWidth:0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -23,6 +29,14 @@ Page({
     })
   },
   onLoad: function () {
+    let that = this;
+    wx.getSystemInfo({
+      success(res){
+        that.setData({
+          windowWidth:res.windowWidth
+        })  
+      }
+    }) 
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -49,6 +63,16 @@ Page({
         }
       })
     }
+   
+  },
+  scrollTab:function(e){
+    
+    
+    let {scrollLeft,scrollWidth} = e.detail;
+    let thumbLeft = (scrollLeft / (scrollWidth - this.data.windowWidth)) * 50;
+    this.setData({
+      thumbLeft
+    })
    
   },
   getUserInfo: function(e) {

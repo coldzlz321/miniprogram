@@ -1,0 +1,10 @@
+<swiper bindchange="changeSwiper" indicator-dots="true" indicator-active-color="#ff1244" class="swiper-container" >
+  <swiper-item wx:for="{{banners}}" wx:key="id">
+    <image src="{{item}}" mode="aspectFit" />
+  </swiper-item>
+</swiper>
+<view wx:if="{{current == 2}}" class="btnContainer">
+  <button type="primary" size="mini"  bindtap="gotoIndex">
+    进入主页
+  </button>
+</view>

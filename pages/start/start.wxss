@@ -1,0 +1,16 @@
+.swiper-container{
+  width:100vw;
+  height:100vh;
+}
+.btnContainer{
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width:100vw;
+  justify-content: center;
+  display: flex;
+}
+image{
+  width: 100vw;
+  height: 100vh;
+}
